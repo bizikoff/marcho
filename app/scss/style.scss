@@ -4,7 +4,62 @@
 @import 'global';
 
 
+.header{
+  padding: 40px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.menu{
+  &__list{
+    display: flex;
+  }
+  &__list-item + .menu__list-item{
+    margin-left: 35px;
+  }
+  &__list-link{
+    color: $title;
+    @extend %roboto-400;
+    padding-bottom: 2px;
+    transition: all .3s;
+    &:hover{
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      @extend %roboto-700;
+    }
+  }
+  &__list-link--active{
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    @extend %roboto-700;
+  }
+}
 
+
+.user-nav{
+  display: flex;
+  &__link{
+    position: relative;
+  }
+  &__link + .user-nav__link{
+    margin-left: 25px;
+  }
+  &__num{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    top: -10px;
+    right: -12px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+  }
+}
 
 
 
