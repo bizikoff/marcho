@@ -4,8 +4,165 @@
 @import 'global';
 
 
+.header{
+  padding: 40px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.menu{
+  &__list{
+    display: flex;
+  }
+  &__list-item + .menu__list-item{
+    margin-left: 35px;
+  }
+  &__list-link{
+    text-transform: uppercase;
+    color: $title;
+    @extend %roboto-400;
+    padding-bottom: 2px;
+    transition: all .3s;
+    &:hover{
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      @extend %roboto-700;
+    }
+  }
+  &__list-link--active{
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    @extend %roboto-700;
+  }
+}
 
 
+.user-nav{
+  display: flex;
+  &__link{
+    position: relative;
+  }
+  &__link + .user-nav__link{
+    margin-left: 25px;
+  }
+  &__num{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $accent;
+    top: -10px;
+    right: -12px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+  }
+}
 
+
+.footer{
+  background-color: $bg;
+}
+
+.footer-top{
+  padding: 70px 0 40px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  &__contact{
+    width: 250px;
+    margin-right: 50px;
+  }
+  &__nav{
+    width: 170px;
+    margin-right: 30px;
+  }
+  &__item-form{
+    max-width: 470px;
+  }
+  &__logo{
+    display: block;
+    margin-bottom: 33px;
+  }
+  &__adress,
+  &__email,
+  &__phone{
+    display: block;
+    margin-bottom: 15px;
+  }
+  &__title{
+    margin-bottom: 40px;
+    font-size: 22px;
+    line-height: 1;
+    color: $title;
+    @extend %roboto-500;
+  }
+  &__social-list{
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+  }
+  &__social-item + .footer-top__social-item{
+    margin-left: 20px;
+  }
+  &__social-link{
+    transition: all .3s;
+    path{
+      fill: $default;
+    }
+    &:hover{
+      path {
+      fill: $accent;
+      }
+    }
+  }
+  &__link{
+    display: block;
+    margin-bottom: 15px;
+  }
+  &__text{
+    margin-bottom: 25px;
+  }
+  &__form-input{
+    max-width: 320px;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    padding: 12px 10px 12px 15px;
+    margin-right: 10px;
+    box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
+    &::placeholder{
+      color: $default;
+    }
+  }
+  &__form-btn{
+    border: none;
+    background-color: $accent;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 12px 20px;
+    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.footer-bottom{
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  &__accept{
+    display: flex;
+  }
+  &__accept-img{
+    margin-left: 25px;
+    height: 20px;
+  }
+}
 
 @import 'media';
