@@ -397,4 +397,117 @@
   }
 }
 
+.product{
+  text-align: center;
+  padding: 110px 0 120px;
+  &__items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 45px 30px;
+  }
+  &__link{
+    @extend %roboto-400;
+    color: $title;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    border: 1px solid $accent;
+    display: inline-block;
+    margin-top: 55px;
+  }
+}
+
+.product-item{
+  max-width: 370px;
+  &__img-box{
+    height: 370px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 25px;
+    &:hover{
+      .product-item__link-box{
+        transform: translateY(0);
+      }
+    }
+  }
+  &__link-box{
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    width: 220px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+    border-radius: 23px;
+    transform: translateY(300%);
+    transition: all .3s;
+  }
+  &__link{
+    display: inherit;
+    path{
+      transition: all .3s;
+    }
+    &:hover{
+      path{
+        fill: $accent;
+      }
+    }
+  }
+  &__link--border::before,
+  &__link--border::after{ 
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    top: 10px;
+    background-color: #ececec;
+  }
+  &__link--border::before{
+    left: 70px;
+  }
+  &__link--border::after{
+    right: 70px;
+  }
+  &__images{
+    object-fit: cover;
+  }
+  &__title{
+    font-size: 22px;
+    @extend %roboto-400;
+    color: $title;
+    margin: 15px 0;
+  }
+  &__price{
+    display: flex;
+    justify-content: center;
+    @extend %roboto-400;
+  }
+  &__new-price{
+    color: $title;
+    padding: 0 10px;
+  }
+  &__old-price{
+    text-decoration: line-through;
+    padding: 0 10px;
+  }
+  &--sale{
+    .product-item__img-box::before{
+      content: "SALE";
+      position: absolute;
+      @extend %btn;
+      top: 15px;
+      left: 15px;
+      line-height: 1;
+      padding: 10px 15px;
+    }
+  }
+}
+.star{
+  margin: 0 auto;
+}
+
 @import 'media';
