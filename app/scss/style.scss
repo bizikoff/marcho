@@ -157,6 +157,28 @@
   }
 }
 
+.top{
+  text-align: center;
+  &__container{
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 120px 15px 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+  &__title{
+    text-align: center;
+    @extend %roboto-400;
+    font-size: 48px;
+    line-height: 65px;
+    color: $title;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+}
+
+
 .top-slider{
   background-image: url('../images/decor/top-slider-bg.png');
   background-repeat: no-repeat;
