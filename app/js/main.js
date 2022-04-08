@@ -5,6 +5,19 @@ $(function() {
     fade: true,
     autoplay: true
   });
+  
+  $('.filter-price__input').ionRangeSlider({
+    type: "double",
+    step: 5,
+    onStart: function (data) {
+      $('.filter-price__from').text(data.from),
+      $('.filter-price__to').text(data.to)
+    },
+    onChange: function (data) {
+      $('.filter-price__from').text(data.from),
+      $('.filter-price__to').text(data.to)
+    },
+  });
 
   $(".star").rateYo({ 
     starWidth: "18px",
