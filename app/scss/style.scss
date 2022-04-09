@@ -943,6 +943,10 @@
   &__label{
     display: block;
     margin-bottom: 15px;
+    cursor: pointer;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   &__input{
     @extend %checkbox-hidden;
