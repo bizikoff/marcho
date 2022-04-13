@@ -1,10 +1,31 @@
 $(function() {
+
   $('.top-slider__inner').slick({
     dots: true,
     arrows: false,
     fade: true,
     autoplay: true
   });
+
+
+  $('.product-slide__thumb').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    focusOnSelect: true,
+    vertical: true,
+    draggable: false,
+    asNavFor: '.product-slide__big'
+  });
+
+  $('.product-slide__big').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    draggable: false,
+    asNavFor: '.product-slide__thumb'
+  });
+
 
   $('.shop-content__filter-btn').on('click', function () {
     $('.shop-content__filter-btn').removeClass('shop-content__filter-btn--active');
@@ -54,6 +75,22 @@ $(function() {
     normalFill: "#ccccce",
     ratedFill: "#ffc35b",
     readOnly: true,
+  });
+
+  $(document).on('click', '.input-number__minus', function () {
+    let total = $(this).next();
+    if (total.val() > 1) {
+      total.val(+total.val() - 1);
+    }
+  });
+  $(document).on('click', '.input-number__plus', function () {
+    let total = $(this).prev();
+    total.val(+total.val() + 1);
+  });
+  document.querySelectorAll('.input-number__input').forEach(function (el) {
+    el.addEventListener('input', function () {
+      this.value = this.value.replace(/[^\d]/g, '');
+    });
   });
 
   function getTimeRemaining(endtime) {
