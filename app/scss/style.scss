@@ -2132,14 +2132,12 @@
   &__img-left{
     float: left;
     margin-right: 30px;
-    margin-bottom: 20px;
-    margin-top: 6px;
+    margin-bottom: 15px;
   }
   &__img-right{
     float: right;
     margin-left: 30px;
-    margin-bottom: 20px;
-    margin-top: 6px;
+    margin-bottom: 15px;
   }
   &__share{
     margin-left: 30px;
@@ -2198,6 +2196,7 @@
   }
   &__share-link{
     margin-right: 15px;
+    vertical-align: middle;
     path{
       transition: all .3s;
       fill: $default;
@@ -2210,6 +2209,113 @@
   }
 }
 
+
+.contact{
+  padding: 120px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__info{
+    margin-right: 30px;
+    max-width: 370px;
+  }
+  &__info-title{
+    font-size: 48px;
+    line-height: 58px;
+    @extend %roboto-700;
+    color: $title;
+    margin-bottom: 20px;
+  }
+  &__info-text{
+    margin-bottom: 60px;
+  }
+  &__info-item{
+    margin-top: 40px;
+    padding-left: 80px;
+    color: $title;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      left: 0;
+      top: -5px;
+      box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+    }
+    &::after{
+      content:'';
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 20px;
+      top: 15px;
+      background-image: url(../images/icons/phone-icon.svg);
+    }
+    &--location::after{
+      width: 14px;
+      height: 20px;
+      left: 23px;
+      background-image: url(../images/icons/location-icon.svg);
+    }
+    &--mail::after{
+      width: 18px;
+      height: 20px;
+      left: 21px;
+      background-image: url(../images/icons/mail.svg);
+    }
+  }
+  &__info-link{
+    display: block;
+    color: $title;
+  }
+  &__form{
+    padding: 60px 40px;
+    width: 770px;
+    box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+  }
+  &__form-title{
+    @extend %roboto-700;
+    font-size: 22px;
+    color: $title;
+    margin-bottom: 30px;
+  }
+  &__form-box{
+    display: flex;
+    justify-content: space-between;
+    input{
+      width: 330px;
+    }
+  }
+  &__form-input{
+    display: block;
+    padding: 0 20px;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 30px;
+    border: none;
+    background-color: $bg;
+  }
+  &__form-textarea{
+    display: block;
+    padding: 20px;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 30px;
+    border: none;
+    background-color: $bg;
+    resize: none;
+  }
+  &__form-btn{
+    @extend %btn;
+    cursor: pointer;
+  }
+}
+
+.map{
+  padding-top: 120px;
+}
 
 
 @import 'media';
