@@ -28,3 +28,137 @@ a{
   line-height: 26px;
   @extend %quicksand-500;
 }
+
+.title{
+  text-align: center;
+  @extend %roboto-700;
+  font-size: 48px;
+  line-height: 65px;
+  color: $title;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.text{
+  text-align: center;
+  max-width: 570px;
+  margin: 0 auto 50px;
+}
+
+.breadcrumbs{
+  display: inline-flex;
+  justify-content: center;
+  padding-left: 25px;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 4px;
+    background-image: url(../images/icons/home-icon.svg);
+  }
+  &__list{
+    display: flex;
+  }
+  &__item{
+    color: #727272;
+    padding-right: 40px;
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      background-image: url(../images/icons/angle-right.svg);
+      width: 9px;
+      height: 10px;
+      top: 7px;
+      right: 15px;
+    }
+    &:last-child{
+      color: $accent;
+      padding-right: 0;
+      &::after{
+        display: none;
+      }
+    }
+  }
+  &__link{
+    color: inherit;
+  }
+}
+
+.pagination{
+  &.pagination--list{
+    padding: 0;
+  }
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  .pagination__list{
+    display: flex;
+    padding: 0 35px;
+  }
+  &__item{
+    padding: 0 15px;
+  }
+  &__link--active{
+    color: $accent;
+  }
+  &__arrows{
+    text-transform: uppercase;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 10px;
+      top: 8px;
+    }
+  }
+  &__prev{
+    padding-left: 15px;
+    &::before{
+      left: 0;
+      background-image: url(../images/icons/angle_left.svg);
+    }
+  }
+  &__next{
+    padding-right: 15px;
+    &::before{
+      right: 0;
+      background-image: url(../images/icons/angle_right.svg);
+    }
+  }
+}
+
+.input-number {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid $bord;
+  color: $title;
+  text-align: center;
+  width: calc(40px * 3);
+}
+
+.input-number__input {
+  background: #fff;
+  width: 40px;
+  height: 50px;
+  border: none;
+  padding: 8px;
+  text-align: center;
+}
+
+.input-number__minus,
+.input-number__plus {
+  width: 40px;
+  height: 50px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
